@@ -43,12 +43,18 @@ Phiên bản cụ thể (cài ngày 2026-10-24, xem `package.json`): Node.js 22.
     screens/
   /store           # Zustand, cầu nối core ↔ ui/game
   /save            # lưu/nạp game (localStorage → IndexedDB sau)
+  /i18n            # file ngôn ngữ
+    vi.json        # tiếng Việt (mặc định)
+    en.json        # tiếng Anh
 /public/assets     # ảnh, âm thanh (xem ART_BIBLE.md)
 /tests
 ```
 
 ## Lưu game
 Bản lưu có trường `version`. Khi đổi cấu trúc state, thêm hàm migrate. MVP: localStorage; nâng IndexedDB ở Phase 8.
+
+## Đa ngôn ngữ
+Mọi chữ hiển thị cho người chơi nằm trong file ngôn ngữ (`src/i18n/vi.json`, `src/i18n/en.json`). Code và `data/*.json` chỉ dùng mã khoá (key), không chứa chữ hiển thị trực tiếp. Ngôn ngữ mặc định: `vi`.
 
 ## Chuẩn code
 - TypeScript `strict`. Không dùng `any` trừ khi có comment lý do.
@@ -61,3 +67,4 @@ Bản lưu có trường `version`. Khi đổi cấu trúc state, thêm hàm mig
 ## Quyết định đã chốt / chờ chốt
 - Chốt: stack ở trên, tách `core/` khỏi Phaser và React.
 - Chờ chốt: hosting/deploy, cơ chế kiếm tiền (ảnh hưởng đến backend và analytics).
+- Chờ chốt: khi có mua trong game thì ví tiền và xác nhận thanh toán phải nằm ở server, không nằm trong localStorage; chọn dịch vụ ở giai đoạn đó.

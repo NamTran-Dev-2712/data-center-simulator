@@ -2,10 +2,10 @@
 
 > Nguồn sự thật về tiến độ. Claude cập nhật file này cuối mỗi bước. Trạng thái: [ ] chưa làm · [~] đang làm · [x] xong.
 
-## Đang ở: Phase 0 — T0.2–T0.6 xong (khung dự án đã lên GitHub); còn T0.1 chờ ông trả lời
+## Đang ở: Phase 0 — T0.1–T0.6 xong; việc kế tiếp: T0.7 (file ngôn ngữ + hàm t(key))
 
 ### Phase 0: Scope & setup
-- [ ] T0.1 Chốt các câu hỏi mở trong `GDD.md` mục 8 (ít nhất: cách kiếm tiền, ngôn ngữ trong game).
+- [x] T0.1 Chốt các câu hỏi mở trong `GDD.md` mục 8 (ít nhất: cách kiếm tiền, ngôn ngữ trong game).
   - Xong khi: ông trả lời, Claude cập nhật GDD sang v0.2.
 - [x] T0.2 Cài môi trường (Node.js LTS, Git, VS Code, Claude Code). Claude hướng dẫn từng lệnh.
   - Xong khi: `node -v`, `git --version` chạy được.
@@ -15,6 +15,7 @@
   - Xong khi: Claude Code mở phiên mới, đọc được 4 file và tóm tắt đúng dự án.
 - [x] T0.5 Commit đầu tiên + đẩy lên GitHub (làm bản sao lưu).
 - [x] T0.6 Sửa đường dẫn tài liệu + kiểm tra kiểu cho tests/
+- [ ] T0.7 Tạo src/i18n/vi.json, en.json và hàm t(key) tối thiểu có test
 
 ### Phase 1: Art bible
 - [ ] T1.1 Hoàn thiện `ART_BIBLE.md` (palette, góc nhìn, kích thước tile).
@@ -51,10 +52,13 @@
 ### Phase 9: Thị trường người chơi (chỉ khi single-player đã vui)
 
 ## Backlog (ý tưởng chưa làm — không thực hiện cho đến khi được chuyển lên)
-- (trống)
+- Monetization (quảng cáo có thưởng, mua trong game, mở khoá, ví/xác nhận thanh toán ở server) — sau Phase 9, chỉ khi game đã vui.
+- Hệ thống rút thăm (gacha) — cần kiểm tra luật trước.
 
 ## Nhật ký quyết định
 - Stack: Vite + React + TS + Phaser 3 + Zustand + Vitest.
 - MVP: 1 phòng, 1 kỹ thuật viên, 4 rack, 2 tài nguyên, 5 hợp đồng NPC, 3 sự cố.
 - 2026-10-24: Dựng khung dự án (Phase 0). Phiên bản: Node.js 22.16.0, Vite 8.3.5, React 19.3.1, TypeScript 6.0.3, Phaser 3.90.0, Zustand 5.0.16, Vitest 5.0.5, oxlint 1.89.0 (template create-vite 9.3.1). Chọn Phaser 3.x (không phải 4.x mới nhất) theo stack đã chốt.
 - 2026-10-24: Tài liệu dự án đặt trong `.claude/`, riêng `CLAUDE.md` ở gốc repo.
+- 2026-10-24 (T0.1): Kiếm tiền = kết hợp quảng cáo, vật phẩm/tiền tệ trong game (vé gọi nhân vật, vé mở rương, mua thời gian/tiền bằng token nạp), bán bản mở khoá; chưa chốt chi tiết. MVP không có monetization. Ví tiền và xác nhận thanh toán sẽ nằm ở server khi làm.
+- 2026-10-24 (T0.1): Ngôn ngữ = đa ngôn ngữ, bắt đầu tiếng Việt (mặc định) và tiếng Anh. Chữ hiển thị nằm trong `src/i18n/*.json`, code chỉ dùng mã khoá. GDD lên v0.2.

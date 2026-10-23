@@ -1,4 +1,4 @@
-# GDD — Data Center Incident Simulator (v0.1)
+# GDD — Data Center Incident Simulator (v0.2)
 
 > Trạng thái: bản nháp dựng từ ý tưởng đã chốt ở các buổi trước. Mục đánh dấu **[CHỐT?]** là giả định cần ông xác nhận hoặc sửa.
 
@@ -8,7 +8,11 @@ Game 2D web, mobile-first, thể loại tycoon/simulation. Người chơi điề
 Vòng lặp cốt lõi: **Nhận hợp đồng → cấp công suất → vận hành → xảy ra sự cố → sửa/ứng phó → nhận thanh toán hoặc bị phạt SLA → nâng cấp → hợp đồng lớn hơn.**
 
 ## 2. Nền tảng & đối tượng
-- Chạy trên trình duyệt, ưu tiên điện thoại (dọc), cảm ứng. Deploy dạng web để kiếm tiền (cách kiếm tiền cụ thể: **[CHỐT?]** bán, quảng cáo, hay mua trong game).
+- Chạy trên trình duyệt, ưu tiên điện thoại (dọc), cảm ứng. Deploy dạng web để kiếm tiền.
+- Mô hình kiếm tiền (đã chọn hướng, chưa chốt chi tiết): kết hợp **quảng cáo**, **bán vật phẩm/tiền tệ trong game** (có thể gồm vé gọi nhân vật, vé mở rương, mua thời gian/tiền bằng token nạp như kim cương), và **bán bản mở khoá**.
+  - **[CHỐT?]** chi tiết, rủi ro: gacha cần kiểm tra luật và điều khoản nền tảng, bán sức mạnh có thể phá cân bằng SLA.
+  - **MVP KHÔNG có monetization.**
+- Ngôn ngữ: đa ngôn ngữ, bắt đầu với **tiếng Việt (mặc định)** và **tiếng Anh**.
 - Người chơi: thích game quản lý/tycoon, phiên chơi ngắn.
 
 ## 3. Hệ thống cốt lõi
@@ -55,7 +59,7 @@ Khi thiết kế dữ liệu hợp đồng/công suất/thị trường, để s
 - Sự cố tạo căng thẳng nhưng không gây ức chế.
 
 ## 8. Câu hỏi còn mở
-1. Cách kiếm tiền từ game?
+1. ~~Cách kiếm tiền từ game?~~ **Đã trả lời (v0.2):** quảng cáo + vật phẩm/tiền tệ trong game + bản mở khoá; chi tiết còn [CHỐT?] (xem mục 2).
 2. Tên thương hiệu, bối cảnh (công ty/quốc gia hư cấu)?
 3. Giọng điệu: nghiêm túc mô phỏng hay hài hước?
-4. Ngôn ngữ trong game: Việt, Anh, hay cả hai?
+4. ~~Ngôn ngữ trong game: Việt, Anh, hay cả hai?~~ **Đã trả lời (v0.2):** đa ngôn ngữ, bắt đầu tiếng Việt (mặc định) và tiếng Anh.

@@ -33,6 +33,7 @@ single light source from top-left, clean data center server room asset,
 ## Cảnh báo
 - Hoạt ảnh nhân vật là phần AI làm kém ổn định nhất: làm 1 sprite đứng → 4 hướng đứng → đi → sửa, từng bước.
 - Kiểm tra điều khoản thương mại của công cụ AI ảnh/âm thanh và font trước khi phát hành.
+- Font phải hỗ trợ đủ dấu tiếng Việt (ví dụ: ă, â, ê, ô, ơ, ư, đ và các dấu thanh như ặ, ờ, ữ). Nhiều font pixel chỉ có chữ Latin cơ bản; thử hiển thị một câu tiếng Việt đầy đủ trước khi chọn.
 - Chưa có asset thật thì dùng ô vuông màu làm placeholder, đừng chặn tiến độ.
 
 ## Danh sách asset tối thiểu
