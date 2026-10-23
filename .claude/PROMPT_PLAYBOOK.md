@@ -7,7 +7,7 @@
 
 ## Mở đầu mỗi phiên Claude Code
 ```
-Đọc CLAUDE.md, GDD.md, ARCHITECTURE.md và TASKS.md.
+Đọc CLAUDE.md, .claude/GDD.md, .claude/ARCHITECTURE.md và .claude/TASKS.md.
 Tóm tắt trong 5 dòng: game là gì, đang ở task nào, việc kế tiếp. Chưa viết code.
 ```
 

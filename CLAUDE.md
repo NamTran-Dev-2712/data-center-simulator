@@ -3,7 +3,7 @@
 > Đặt file này ở GỐC repo. Claude Code tự đọc nó mỗi phiên. Bản trong project knowledge chỉ để đối chiếu.
 
 ## Project
-2D mobile-first web tycoon game: run a small data center, take hosting contracts, keep equipment alive, handle incidents. Solo developer who does NOT write code; everything is vibe coded. Read `GDD.md`, `ARCHITECTURE.md`, `TASKS.md` before any non-trivial work.
+2D mobile-first web tycoon game: run a small data center, take hosting contracts, keep equipment alive, handle incidents. Solo developer who does NOT write code; everything is vibe coded. Project docs live in `.claude/`: read `.claude/GDD.md`, `.claude/ARCHITECTURE.md`, `.claude/TASKS.md` (and `.claude/ART_BIBLE.md` for art) before any non-trivial work.
 
 ## Stack
 Vite + React + TypeScript (UI), Phaser 3 (2D scene), Zustand (shared state), Vitest (tests). Do not add or swap libraries without asking.
@@ -51,4 +51,4 @@ Vite + React + TypeScript (UI), Phaser 3 (2D scene), Zustand (shared state), Vit
 - `npm run preview` — xem bản build
 
 ## Assets
-Files go in `public/assets/`, named `category_name_state_frame.png` (e.g. `rack_idle_01.png`). See `ART_BIBLE.md`. Placeholder rectangles are fine until final art exists; never block on art.
+Files go in `public/assets/`, named `category_name_state_frame.png` (e.g. `rack_idle_01.png`). See `.claude/ART_BIBLE.md`. Placeholder rectangles are fine until final art exists; never block on art.

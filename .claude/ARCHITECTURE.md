@@ -18,6 +18,7 @@ Phiên bản cụ thể (cài ngày 2026-10-24, xem `package.json`): Node.js 22.
 4. **Nội dung là dữ liệu.** Hợp đồng, thiết bị, sự cố định nghĩa trong `data/*.json` và được kiểm tra kiểu khi nạp.
 5. **Deterministic khi có thể.** Mọi ngẫu nhiên đi qua một bộ sinh số ngẫu nhiên có seed, để test và tái hiện lỗi.
 6. **Một chiều dữ liệu:** input → lệnh (command) → core cập nhật state → game/ui đọc state. Không để game và ui sửa state trực tiếp.
+7. **State của `core/` là dữ liệu thuần JSON** (không class instance, không hàm) để lưu game dễ dàng và sau này chạy được trên server.
 
 ## Cấu trúc thư mục dự kiến
 ```
