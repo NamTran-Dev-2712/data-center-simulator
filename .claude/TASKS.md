@@ -2,7 +2,7 @@
 
 > Nguồn sự thật về tiến độ. Claude cập nhật file này cuối mỗi bước. Trạng thái: [ ] chưa làm · [~] đang làm · [x] xong.
 
-## Đang ở: Phase 0 — khung dự án đã dựng (T0.2–T0.4 xong, T0.5 đang đẩy lên GitHub); còn T0.1 chờ ông trả lời
+## Đang ở: Phase 0 — T0.2–T0.5 xong (khung dự án đã lên GitHub); còn T0.1 chờ ông trả lời
 
 ### Phase 0: Scope & setup
 - [ ] T0.1 Chốt các câu hỏi mở trong `GDD.md` mục 8 (ít nhất: cách kiếm tiền, ngôn ngữ trong game).
@@ -13,7 +13,7 @@
   - Xong khi: `npm run dev` mở trang trắng không lỗi; `npm run test` chạy được 1 test mẫu.
 - [x] T0.4 Đặt `CLAUDE.md`, `GDD.md`, `ARCHITECTURE.md`, `TASKS.md` vào repo; tạo cấu trúc thư mục theo ARCHITECTURE.
   - Xong khi: Claude Code mở phiên mới, đọc được 4 file và tóm tắt đúng dự án.
-- [~] T0.5 Commit đầu tiên + đẩy lên GitHub (làm bản sao lưu).
+- [x] T0.5 Commit đầu tiên + đẩy lên GitHub (làm bản sao lưu).
 
 ### Phase 1: Art bible
 - [ ] T1.1 Hoàn thiện `ART_BIBLE.md` (palette, góc nhìn, kích thước tile).
