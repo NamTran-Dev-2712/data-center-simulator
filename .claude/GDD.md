@@ -1,14 +1,15 @@
-# GDD — Data Center Incident Simulator (v0.3)
+# GDD — Data Center Incident Simulator (v0.4)
 
 > Trạng thái: bản nháp dựng từ ý tưởng đã chốt ở các buổi trước. Mục đánh dấu **[CHỐT?]** là giả định cần ông xác nhận hoặc sửa.
 
 ## 1. Tóm tắt
-Game 2D web, mobile-first, thể loại tycoon/simulation. Người chơi điều hành một data center nhỏ: nhận hợp đồng cho thuê công suất, giữ thiết bị chạy ổn, xử lý sự cố, kiếm tiền và mở rộng.
+Game 2.5D (mô hình 3D low-poly, camera isometric cố định, kéo + pinch) chạy trên web, mobile-first, thể loại tycoon/simulation. Người chơi điều hành một data center nhỏ: nhận hợp đồng cho thuê công suất, giữ thiết bị chạy ổn, xử lý sự cố, kiếm tiền và mở rộng.
 
 Vòng lặp cốt lõi: **Nhận hợp đồng → cấp công suất → vận hành → xảy ra sự cố → sửa/ứng phó → nhận thanh toán hoặc bị phạt SLA → nâng cấp → hợp đồng lớn hơn.**
 
 ## 2. Nền tảng & đối tượng
 - Chạy trên trình duyệt, ưu tiên điện thoại (dọc), cảm ứng. Deploy dạng web để kiếm tiền.
+- Hình ảnh: 2.5D (mô hình 3D low-poly, camera isometric cố định, kéo + pinch). Chi tiết ở mục 3.8 và `ART_BIBLE.md`.
 - Mô hình kiếm tiền (đã chọn hướng, chưa chốt chi tiết): kết hợp **quảng cáo**, **bán vật phẩm/tiền tệ trong game** (có thể gồm vé gọi nhân vật, vé mở rương, mua thời gian/tiền bằng token nạp như kim cương), và **bán bản mở khoá**.
   - **[CHỐT?]** chi tiết, rủi ro: gacha cần kiểm tra luật và điều khoản nền tảng, bán sức mạnh có thể phá cân bằng SLA.
   - **MVP KHÔNG có monetization.**
@@ -38,11 +39,17 @@ Thuê thêm kỹ thuật viên, kỹ năng, chi phí cố định, tự động 
 Đồng hồ game có tạm dừng, 1x, 2x.
 
 ### 3.7 Thế giới & điều hướng
-- Thế giới 2D lớn hơn màn hình; người chơi kéo (drag) để di chuyển camera, hai ngón để phóng to/thu nhỏ (pinch). Có giới hạn biên và giới hạn zoom.
-- Phân biệt kéo và chạm: chạm ngắn vào rack = mở panel; kéo quá ngưỡng nhỏ = di chuyển camera, không mở panel.
+- Thế giới 3D lớn hơn màn hình, nhìn bằng camera trực giao (orthographic: vật ở xa không nhỏ lại) góc isometric cố định, không xoay. Người chơi kéo (drag) để di chuyển camera, hai ngón để phóng to/thu nhỏ (pinch); máy tính dùng chuột kéo và lăn chuột.
+- Giới hạn đo từ spike (nhánh `spike/3d-look`): zoom mặc định vừa khít cả phòng (màn dọc thì theo chiều ngang); zoom từ 0.8× đến 4× mức vừa khít; điểm nhìn không ra khỏi biên phòng (±5 ô quanh tâm phòng 10 × 10).
+- Phân biệt kéo và chạm: chạm ngắn vào rack = mở panel; kéo quá ngưỡng nhỏ (8 px CSS trong spike) = di chuyển camera, không mở panel.
 - MVP vẫn đúng phạm vi mục 4: 1 phòng, 4 rack. Nhưng phòng đó nằm trong thế giới kéo được, không cố định giữa màn hình.
 - Nhiều phòng / nhiều khu vực chơi được: để sau MVP (giữ ở mục 5). Từ giờ dữ liệu phòng phải có `roomId` và toạ độ trong thế giới để mở rộng không phải đập đi làm lại.
-- Mức zoom nên là các bước nguyên (ví dụ 1x, 2x) để pixel art không bị mờ: **[CHỐT?]**, kiểm tra khi làm Phase 3.
+
+### 3.8 Hướng hình ảnh
+- 2.5D: mô hình 3D low-poly, màu phẳng, bo cạnh nhẹ, ánh sáng mềm + bóng nhẹ, nhân vật thân tròn đầu to. Quy định chi tiết trong `ART_BIBLE.md` (v0.3).
+- Giao diện **sáng là mặc định**. Giao diện tối là tuỳ chọn: ghi vào Backlog, không làm ngay.
+- Tông: **nghiêm túc, hơi dễ thương** (như mục 8, câu 3).
+- Ảnh tham chiếu của chủ dự án chỉ làm mốc phong cách. **Không sao chép** nhân vật, bố cục, giao diện hay tài sản của game khác.
 
 ## 4. Phạm vi MVP (đã khoá)
 - 1 phòng máy
@@ -70,3 +77,6 @@ Khi thiết kế dữ liệu hợp đồng/công suất/thị trường, để s
 2. ~~Tên thương hiệu, bối cảnh (công ty/quốc gia hư cấu)?~~ **Đã trả lời (v0.3):** bối cảnh là công ty hư cấu, không gắn quốc gia. Tên thương hiệu tạm dùng "NimbusCore (tên tạm)", chỉ là tạm, chưa quan trọng: **[CHỐT?]**.
 3. ~~Giọng điệu: nghiêm túc mô phỏng hay hài hước?~~ **Đã trả lời (v0.3):** nghiêm túc, hơi dễ thương. Không máu, không cháy dữ dội.
 4. ~~Ngôn ngữ trong game: Việt, Anh, hay cả hai?~~ **Đã trả lời (v0.2):** đa ngôn ngữ, bắt đầu tiếng Việt (mặc định) và tiếng Anh.
+
+## 9. Nhật ký quyết định
+- 2026-10-24 (T1.3, GDD v0.4): đổi hướng hình ảnh từ 2D sang **2.5D** (mô hình 3D low-poly, camera isometric cố định, kéo + pinch), sau khi spike trên nhánh `spike/3d-look` chạy 60 FPS trên Galaxy A14. Bỏ quy tắc "zoom bước nguyên cho pixel art". Thêm mục 3.8 Hướng hình ảnh. Phạm vi MVP (mục 4) giữ nguyên.

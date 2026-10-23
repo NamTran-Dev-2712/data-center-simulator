@@ -33,7 +33,7 @@ Làm:
 - Tạo src/core/capacity.ts với kiểu Capacity { physical, reserved, used, sellable } cho từng tài nguyên (power, network).
 - Hàm reserve(), release(), tính sellable = physical - reserved.
 - Test trong tests/capacity.test.ts.
-Không làm: không đụng Phaser/React, không làm giao diện.
+Không làm: không đụng Three.js/React, không làm giao diện.
 Tiêu chí hoàn thành:
 - Test: không reserve vượt quá sellable; release trả lại đúng; số không bao giờ âm.
 - npm run test và npm run build đều pass.
@@ -51,7 +51,7 @@ File vừa sửa gần nhất: <tên file nếu nhớ>
 
 ## Mẫu nhờ rà soát (cuối mỗi phase)
 ```
-Rà soát kiến trúc sau Phase <n>: có chỗ nào vi phạm ARCHITECTURE.md (core import Phaser/React, luật chơi nằm trong ui/game, dữ liệu hard-code)?
+Rà soát kiến trúc sau Phase <n>: có chỗ nào vi phạm ARCHITECTURE.md (core import Three.js/React, luật chơi nằm trong ui/game, dữ liệu hard-code)?
 Liệt kê vấn đề theo mức độ, đề xuất sửa, rồi cập nhật ARCHITECTURE.md nếu cấu trúc đã đổi. Chưa sửa code cho đến khi tui đồng ý.
 ```
 

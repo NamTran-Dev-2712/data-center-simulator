@@ -3,20 +3,21 @@
 > Đặt file này ở GỐC repo. Claude Code tự đọc nó mỗi phiên. Bản trong project knowledge chỉ để đối chiếu.
 
 ## Project
-2D mobile-first web tycoon game: run a small data center, take hosting contracts, keep equipment alive, handle incidents. Solo developer who does NOT write code; everything is vibe coded. Project docs live in `.claude/`: read `.claude/GDD.md`, `.claude/ARCHITECTURE.md`, `.claude/TASKS.md` (and `.claude/ART_BIBLE.md` for art) before any non-trivial work.
+2.5D (low-poly 3D models, fixed isometric camera, drag + pinch) mobile-first web tycoon game: run a small data center, take hosting contracts, keep equipment alive, handle incidents. Solo developer who does NOT write code; everything is vibe coded. Project docs live in `.claude/`: read `.claude/GDD.md`, `.claude/ARCHITECTURE.md`, `.claude/TASKS.md` (and `.claude/ART_BIBLE.md` for art) before any non-trivial work.
 
 ## Stack
-Vite + React + TypeScript (UI), Phaser 3 (2D scene), Zustand (shared state), Vitest (tests). Do not add or swap libraries without asking.
+Vite + React + TypeScript (UI), Three.js (2.5D scene), Zustand (shared state), Vitest (tests). Do not add or swap libraries without asking.
 
 ## Hard rules
-1. `src/core/` is pure TypeScript. It must NOT import Phaser, React, or touch the DOM. All game rules live here and need unit tests.
-2. `src/game/` (Phaser) and `src/ui/` (React) contain no game rules. They send commands to core and render state from it.
+1. `src/core/` is pure TypeScript. It must NOT import Three.js, React, or touch the DOM. All game rules live here and need unit tests.
+2. `src/game/` (Three.js) and `src/ui/` (React) contain no game rules. They send commands to core and render state from it.
 3. Content (contracts, equipment, incidents) lives in `src/data/*.json`, not hard-coded.
 4. All randomness goes through the seeded RNG in `core/rng.ts`.
 5. TypeScript strict mode. No `any` without a comment explaining why.
 6. Do only the task asked. No unrelated refactors, no extra features. New ideas go in the Backlog section of `TASKS.md`.
-7. Never invent library APIs. If unsure about Phaser/Zustand/Vite syntax for the installed version, check the installed package types or official docs first.
+7. Never invent library APIs. If unsure about Three.js/Zustand/Vite syntax for the installed version, check the installed package types or official docs first.
 8. Stay within MVP scope in `GDD.md` section 4.
+9. Every change to the rendering layer (`src/game/`) must be measured for FPS on a real phone when possible.
 
 ## Workflow for every task
 1. Restate the task and its acceptance criteria in 2-3 lines.
@@ -51,4 +52,4 @@ Vite + React + TypeScript (UI), Phaser 3 (2D scene), Zustand (shared state), Vit
 - `npm run preview` — xem bản build
 
 ## Assets
-Files go in `public/assets/`, named `category_name_state_frame.png` (e.g. `rack_idle_01.png`). See `.claude/ART_BIBLE.md`. Placeholder rectangles are fine until final art exists; never block on art.
+Build 3D objects in code from simple shapes first. External models only if licensed CC0 or allowed for commercial use; record source + license. Files that are needed (audio, external models) go in `public/assets/`. See `.claude/ART_BIBLE.md`. Placeholder shapes are fine until final art exists; never block on art.
