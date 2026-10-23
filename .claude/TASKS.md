@@ -2,7 +2,7 @@
 
 > Nguồn sự thật về tiến độ. Claude cập nhật file này cuối mỗi bước. Trạng thái: [ ] chưa làm · [~] đang làm · [x] xong.
 
-## Đang ở: Phase 1 — Art bible (Phase 0 xong: T0.1–T0.7)
+## Đang ở: Phase 1 — T1.1 xong; việc kế tiếp: T1.2 (prompt gốc cho AI ảnh + thử 1 rack)
 
 ### Phase 0: Scope & setup
 - [x] T0.1 Chốt các câu hỏi mở trong `GDD.md` mục 8 (ít nhất: cách kiếm tiền, ngôn ngữ trong game).
@@ -18,7 +18,7 @@
 - [x] T0.7 Tạo src/i18n/vi.json, en.json và hàm t(key) tối thiểu có test
 
 ### Phase 1: Art bible
-- [ ] T1.1 Hoàn thiện `ART_BIBLE.md` (palette, góc nhìn, kích thước tile).
+- [x] T1.1 Hoàn thiện `ART_BIBLE.md` (palette, góc nhìn, kích thước tile).
 - [ ] T1.2 Tạo prompt gốc cho AI ảnh và thử 1 rack.
 
 ### Phase 2: Asset tối thiểu
@@ -33,6 +33,7 @@
 ### Phase 3: Vertical slice (1–2 tuần)
 - [ ] Nhân vật đi trong phòng, click rack mở panel, LED nhấp nháy, 1 rack hỏng → bấm sửa → có hoạt ảnh. Chưa có kinh tế.
   - Cổng: nếu nhìn chưa đã mắt, quay lại sửa art trước khi đi tiếp.
+- [ ] Camera kéo thả + pinch zoom, có biên; chạm khác kéo
 
 ### Phase 4: Lõi mô phỏng (mỗi mục kèm test)
 - [ ] Đồng hồ game (tạm dừng/1x/2x)
@@ -62,3 +63,5 @@
 - 2026-10-24: Tài liệu dự án đặt trong `.claude/`, riêng `CLAUDE.md` ở gốc repo.
 - 2026-10-24 (T0.1): Kiếm tiền = kết hợp quảng cáo, vật phẩm/tiền tệ trong game (vé gọi nhân vật, vé mở rương, mua thời gian/tiền bằng token nạp), bán bản mở khoá; chưa chốt chi tiết. MVP không có monetization. Ví tiền và xác nhận thanh toán sẽ nằm ở server khi làm.
 - 2026-10-24 (T0.1): Ngôn ngữ = đa ngôn ngữ, bắt đầu tiếng Việt (mặc định) và tiếng Anh. Chữ hiển thị nằm trong `src/i18n/*.json`, code chỉ dùng mã khoá. GDD lên v0.2.
+- 2026-10-24 (T1.1): ART_BIBLE v0.2. Khoá bảng màu 25 màu (7 ô dự trữ, tối đa 32) và bảng LED 4 trạng thái (màu + nhịp + icon). Hướng sáng, kích thước tile/rack/nhân vật, hitbox 44×44, chữ/nút bằng HTML/React vẫn [CHỐT?].
+- 2026-10-24 (T1.1): GDD v0.3. Giọng điệu nghiêm túc, hơi dễ thương; công ty hư cấu không gắn quốc gia, tên tạm "NimbusCore". Thêm mục 3.7: thế giới lớn kéo thả + pinch zoom, chạm khác kéo; dữ liệu phòng có roomId + toạ độ thế giới. Nhiều phòng vẫn để sau MVP.

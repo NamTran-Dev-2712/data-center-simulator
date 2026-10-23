@@ -1,4 +1,4 @@
-# GDD — Data Center Incident Simulator (v0.2)
+# GDD — Data Center Incident Simulator (v0.3)
 
 > Trạng thái: bản nháp dựng từ ý tưởng đã chốt ở các buổi trước. Mục đánh dấu **[CHỐT?]** là giả định cần ông xác nhận hoặc sửa.
 
@@ -37,6 +37,13 @@ Thuê thêm kỹ thuật viên, kỹ năng, chi phí cố định, tự động 
 ### 3.6 Thời gian
 Đồng hồ game có tạm dừng, 1x, 2x.
 
+### 3.7 Thế giới & điều hướng
+- Thế giới 2D lớn hơn màn hình; người chơi kéo (drag) để di chuyển camera, hai ngón để phóng to/thu nhỏ (pinch). Có giới hạn biên và giới hạn zoom.
+- Phân biệt kéo và chạm: chạm ngắn vào rack = mở panel; kéo quá ngưỡng nhỏ = di chuyển camera, không mở panel.
+- MVP vẫn đúng phạm vi mục 4: 1 phòng, 4 rack. Nhưng phòng đó nằm trong thế giới kéo được, không cố định giữa màn hình.
+- Nhiều phòng / nhiều khu vực chơi được: để sau MVP (giữ ở mục 5). Từ giờ dữ liệu phòng phải có `roomId` và toạ độ trong thế giới để mở rộng không phải đập đi làm lại.
+- Mức zoom nên là các bước nguyên (ví dụ 1x, 2x) để pixel art không bị mờ: **[CHỐT?]**, kiểm tra khi làm Phase 3.
+
 ## 4. Phạm vi MVP (đã khoá)
 - 1 phòng máy
 - 1 kỹ thuật viên (nhân vật điều khiển được)
@@ -60,6 +67,6 @@ Khi thiết kế dữ liệu hợp đồng/công suất/thị trường, để s
 
 ## 8. Câu hỏi còn mở
 1. ~~Cách kiếm tiền từ game?~~ **Đã trả lời (v0.2):** quảng cáo + vật phẩm/tiền tệ trong game + bản mở khoá; chi tiết còn [CHỐT?] (xem mục 2).
-2. Tên thương hiệu, bối cảnh (công ty/quốc gia hư cấu)?
-3. Giọng điệu: nghiêm túc mô phỏng hay hài hước?
+2. ~~Tên thương hiệu, bối cảnh (công ty/quốc gia hư cấu)?~~ **Đã trả lời (v0.3):** bối cảnh là công ty hư cấu, không gắn quốc gia. Tên thương hiệu tạm dùng "NimbusCore (tên tạm)", chỉ là tạm, chưa quan trọng: **[CHỐT?]**.
+3. ~~Giọng điệu: nghiêm túc mô phỏng hay hài hước?~~ **Đã trả lời (v0.3):** nghiêm túc, hơi dễ thương. Không máu, không cháy dữ dội.
 4. ~~Ngôn ngữ trong game: Việt, Anh, hay cả hai?~~ **Đã trả lời (v0.2):** đa ngôn ngữ, bắt đầu tiếng Việt (mặc định) và tiếng Anh.
