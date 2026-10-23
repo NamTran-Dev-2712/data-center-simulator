@@ -2,7 +2,7 @@
 
 > Nguồn sự thật về tiến độ. Claude cập nhật file này cuối mỗi bước. Trạng thái: [ ] chưa làm · [~] đang làm · [x] xong.
 
-## Đang ở: Phase 0 — T0.1–T0.6 xong; việc kế tiếp: T0.7 (file ngôn ngữ + hàm t(key))
+## Đang ở: Phase 1 — Art bible (Phase 0 xong: T0.1–T0.7)
 
 ### Phase 0: Scope & setup
 - [x] T0.1 Chốt các câu hỏi mở trong `GDD.md` mục 8 (ít nhất: cách kiếm tiền, ngôn ngữ trong game).
@@ -15,7 +15,7 @@
   - Xong khi: Claude Code mở phiên mới, đọc được 4 file và tóm tắt đúng dự án.
 - [x] T0.5 Commit đầu tiên + đẩy lên GitHub (làm bản sao lưu).
 - [x] T0.6 Sửa đường dẫn tài liệu + kiểm tra kiểu cho tests/
-- [ ] T0.7 Tạo src/i18n/vi.json, en.json và hàm t(key) tối thiểu có test
+- [x] T0.7 Tạo src/i18n/vi.json, en.json và hàm t(key) tối thiểu có test
 
 ### Phase 1: Art bible
 - [ ] T1.1 Hoàn thiện `ART_BIBLE.md` (palette, góc nhìn, kích thước tile).
